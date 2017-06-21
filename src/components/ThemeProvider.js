@@ -3,10 +3,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Theme from './Theme';
 
-const ThemeProvider = ({ children }) => (
+const ThemeProvider = ({ children }) =>
   <MuiThemeProvider muiTheme={Theme}>
     {children}
-  </MuiThemeProvider>
-);
+  </MuiThemeProvider>;
 
 export default ThemeProvider;
