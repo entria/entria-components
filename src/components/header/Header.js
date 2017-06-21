@@ -36,6 +36,7 @@ const styles = {
     margin: 0,
     padding: 20,
     boxSizing: 'border-box',
+    display: 'flex',
   },
   title: {
     height: Theme.appBar.height,
@@ -53,6 +54,8 @@ const styles = {
     margin: 0,
     padding: 20,
     boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
 };
 
