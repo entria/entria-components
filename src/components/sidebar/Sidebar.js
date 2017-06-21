@@ -12,21 +12,18 @@ import SidebarToggler from './SidebarToggler';
 const Sidebar = ({ visible, style, children }) => {
   const containerStyle = {
     ...styles.wrapper,
-    ...style
+    ...style,
   };
 
   const top = /^\d+$/.test(containerStyle.top) ? `${containerStyle.top}px` : containerStyle.top;
   containerStyle.height = `calc(100% - ${top})`;
 
   return (
-    <Drawer
-      docked={visible}
-      containerStyle={containerStyle}
-    >
+    <Drawer docked={visible} containerStyle={containerStyle}>
       {children}
     </Drawer>
   );
-}
+};
 
 Sidebar.Header = SidebarHeader;
 Sidebar.Item = SidebarItem;
@@ -47,7 +44,7 @@ Sidebar.propTypes = {
   style: PropTypes.object,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   visible: state.sidebar.visible,
 });
 
