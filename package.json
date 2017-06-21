@@ -53,7 +53,6 @@
     "react-dom": ">=0.14",
     "react-redux": ">=5.0.5",
     "react-router-dom": ">=4.1.1",
-    "react-tap-event-plugin": ">=2.0.1",
     "redux": ">=3.7.0"
   },
   "lint-staged": {
