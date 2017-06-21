@@ -1,14 +1,17 @@
 import React from 'react';
 import { addDecorator, configure } from '@kadira/storybook';
+import { MemoryRouter } from 'react-router';
 
 import { ThemeProvider } from '../src';
 
 const req = require.context('./stories', true, /\.story\.js$/);
 
 addDecorator(story => (
-  <ThemeProvider>
-    {story()}
-  </ThemeProvider>
+  <MemoryRouter initialEntries={['/']}>
+    <ThemeProvider>
+      {story()}
+    </ThemeProvider>
+  </MemoryRouter>
 ));
 
 function loadStories () {

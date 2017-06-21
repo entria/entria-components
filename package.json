@@ -29,6 +29,7 @@
     "material-ui": "^0.18.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "material-ui": ">=0.18.3",
     "react": ">=0.14",
     "react-dom": ">=0.14",
+    "react-router-dom": ">=4.1.1",
     "react-tap-event-plugin": ">=2.0.1"
   },
   "scripts": {
