@@ -1,12 +1,22 @@
+/* @flow */
+
 // Actions
-const TOGGLE = 'entria-components/Sidebar/TOGGLE';
+const TOGGLE: string = 'entria-components/Sidebar/TOGGLE';
 
 // Reducer
-const initialState = {
+type State = {
+  visible: boolean,
+};
+
+type Action = {
+  type: string,
+};
+
+const initialState: State = {
   visible: true,
 };
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state: State = initialState, action: Action) {
   switch (action.type) {
     case TOGGLE: {
       return {
@@ -20,6 +30,6 @@ export default function reducer(state = initialState, action) {
 }
 
 // Action Creators
-export function toggleSidebar() {
+export function toggleSidebar(): Action {
   return { type: TOGGLE };
 }
