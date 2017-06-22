@@ -74,8 +74,8 @@
     "demo:publish": "npm run demo:build && npm run demo:gh-pages",
     "check": "npm run lint && npm run test",
     "prerelease": "npm run check && npm run build",
-    "release:patch": "npm run prerelease && npm version patch && git push --follow-tags && npm publish",
-    "release:minor": "npm run prerelease && npm version minor && git push --follow-tags && npm publish",
-    "release:major": "npm run prerelease && npm version major && git push --follow-tags && npm publish"
+    "release:patch": "npm run prerelease && npm version patch && git push --follow-tags && npm publish --access public",
+    "release:minor": "npm run prerelease && npm version minor && git push --follow-tags && npm publish --access public",
+    "release:major": "npm run prerelease && npm version major && git push --follow-tags && npm publish --access public"
   }
 }
