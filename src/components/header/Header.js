@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 
 import Theme from '../Theme';
-import Brand from './Brand';
+import HeaderBrand from './HeaderBrand';
 
 const Header = ({ left, title, right, style }) =>
   <div>
@@ -20,7 +20,7 @@ const Header = ({ left, title, right, style }) =>
     />
   </div>;
 
-Header.Brand = Brand;
+Header.Brand = HeaderBrand;
 
 const styles = {
   wrapper: {

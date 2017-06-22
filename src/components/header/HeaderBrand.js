@@ -10,7 +10,7 @@ const Brand = ({ image, title, subtitle }) =>
 
 const BrandWithImage = ({ image, title }) =>
   <div style={styles.withImage}>
-    <img src={image} title={title} style={styles.image} />
+    <img src={image} title={title} alt={title} style={styles.image} />
   </div>;
 
 const BrandWithoutImage = ({ title, subtitle }) =>
