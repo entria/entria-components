@@ -3,12 +3,12 @@ import { storiesOf } from '@kadira/storybook';
 import loremIpsum from 'lorem-ipsum';
 
 import FlatButton from 'material-ui/FlatButton';
-import { Template, Header, Sidebar, Content } from '../../src';
+import { Header, Sidebar, Content } from '../../src';
 
 const stories = storiesOf('Template', module);
 
 stories.add('default', () =>
-  <Template>
+  <div>
     <Header left={<Header.Brand title="Entria" subtitle="Tech" />} />
 
     <Sidebar>
@@ -34,5 +34,5 @@ stories.add('default', () =>
         {loremIpsum({ count: 3, units: 'paragraphs' })}
       </Content.Body>
     </Content>
-  </Template>,
+  </div>,
 );

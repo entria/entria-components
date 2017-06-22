@@ -12,13 +12,15 @@ injectTapEventPlugin();
 const req = require.context('./stories', true, /\.story\.js$/);
 
 addDecorator(story =>
-  <Provider store={store}>
-    <MemoryRouter initialEntries={['/']}>
-      <ThemeProvider>
-        {story()}
-      </ThemeProvider>
-    </MemoryRouter>
-  </Provider>,
+  <div style={{ margin: -8 }}>
+    <Provider store={store}>
+      <MemoryRouter initialEntries={['/']}>
+        <ThemeProvider>
+          {story()}
+        </ThemeProvider>
+      </MemoryRouter>
+    </Provider>
+  </div>,
 );
 
 function loadStories() {

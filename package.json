@@ -34,7 +34,6 @@
     "eslint-plugin-react": "^7.1.0",
     "flow-bin": "^0.48.0",
     "gh-pages": "^1.0.0",
-    "glamor": "^2.20.25",
     "lint-staged": "^4.0.0",
     "lorem-ipsum": "^1.0.4",
     "material-ui": "^0.18.3",
@@ -51,7 +50,6 @@
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {
-    "glamor": ">=2.20.25",
     "material-ui": ">=0.18.3",
     "react": ">=0.14",
     "react-dom": ">=0.14",
