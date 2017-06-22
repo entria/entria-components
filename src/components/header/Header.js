@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
-import { white } from 'material-ui/styles/colors';
 
 import Theme from '../Theme';
 import Brand from './Brand';
