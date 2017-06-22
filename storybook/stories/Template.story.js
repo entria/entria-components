@@ -12,6 +12,7 @@ stories.add('default', () =>
     <Header left={<Header.Brand title="Entria" subtitle="Tech" />} />
 
     <Sidebar>
+      <Sidebar.Header>Entria</Sidebar.Header>
       <Sidebar.Menu>
         <Sidebar.Item link="#">Link 1</Sidebar.Item>
         <Sidebar.Item link="#">Link 2</Sidebar.Item>
