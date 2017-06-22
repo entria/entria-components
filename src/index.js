@@ -1,4 +1,5 @@
 export Card from './components/card/Card';
+export Content from './components/content/Content';
 export Header from './components/header/Header';
 export Sidebar from './components/sidebar/Sidebar';
 
