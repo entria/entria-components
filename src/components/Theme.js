@@ -14,6 +14,9 @@ const muiTheme = getMuiTheme({
   },
   appBar: {
     height: 100,
+    color: white,
+    textColor: '#000',
+    padding: 0,
   },
   drawer: {
     color: white,
