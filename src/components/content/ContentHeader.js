@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Theme from '../Theme';
+import ContentHeaderActions from './ContentHeaderActions';
 
-const ContentHeader = ({ title }) =>
+const ContentHeader = ({ title, actions }) =>
   <div style={styles.container}>
     <h1 style={styles.title}>
       {title}
     </h1>
+
+    {actions && <div style={styles.actions}>{actions}</div>}
   </div>;
+
+ContentHeader.Actions = ContentHeaderActions;
 
 const styles = {
   container: {
@@ -27,14 +32,17 @@ const styles = {
     letterSpacing: '-0.015em',
     color: Theme.palette.primary1Color,
   },
+  actions: {},
 };
 
 ContentHeader.defaultProps = {
   title: null,
+  actions: null,
 };
 
 ContentHeader.propTypes = {
   title: PropTypes.string,
+  actions: PropTypes.node,
 };
 
 export default ContentHeader;
