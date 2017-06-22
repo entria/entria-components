@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Theme from '../Theme';
 import ContentBody from './ContentBody';
+import ContentHeader from './ContentHeader';
 
 const Content = ({ sidebar, style, children }) => {
   const stylesWrapper = {
@@ -22,6 +23,7 @@ const Content = ({ sidebar, style, children }) => {
 };
 
 Content.Body = ContentBody;
+Content.Header = ContentHeader;
 
 const styles = {
   wrapper: {
