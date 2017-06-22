@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CardActions } from 'material-ui/Card';
 
-const Footer = ({ style, children }) => (
+const CardFooter = ({ style, children }) =>
   <CardActions style={{ ...styles.wrapper, ...style }}>
     {React.isValidElement(children) ? children : <div>{children}</div>}
-  </CardActions>
-);
+  </CardActions>;
 
 const styles = {
   wrapper: {
@@ -21,12 +20,12 @@ const styles = {
   },
 };
 
-Footer.defaultProps = {
+CardFooter.defaultProps = {
   style: {},
 };
 
-Footer.propTypes = {
+CardFooter.propTypes = {
   style: PropTypes.object,
 };
 
-export default Footer;
+export default CardFooter;

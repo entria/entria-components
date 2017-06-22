@@ -2,7 +2,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { white } from 'material-ui/styles/colors';
 
 const muiTheme = getMuiTheme({
-  fontFamily: 'Montserrat',
+  fontFamily: '"Montserrat", sans-serif',
   palette: {
     primary1Color: '#2B8CE9',
     primary2Color: '#FC615D',

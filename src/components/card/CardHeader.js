@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Header = ({ style, children }) => (
+const CardHeader = ({ style, children }) =>
   <div style={{ ...styles.wrapper, ...style }}>
     {children}
-  </div>
-);
+  </div>;
 
 const styles = {
   wrapper: {
@@ -18,12 +17,12 @@ const styles = {
   },
 };
 
-Header.defaultProps = {
+CardHeader.defaultProps = {
   style: {},
 };
 
-Header.propTypes = {
+CardHeader.propTypes = {
   style: PropTypes.object,
 };
 
-export default Header;
+export default CardHeader;

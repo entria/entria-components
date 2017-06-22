@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card as MUICard } from 'material-ui/Card';
 
-import Footer from './Footer';
-import Header from './Header';
+import CardFooter from './CardFooter';
+import CardHeader from './CardHeader';
 
-const Card = ({ style, children }) => (
+const Card = ({ style, children }) =>
   <MUICard style={{ ...styles.wrapper, ...style }}>
     {React.isValidElement(children) ? children : <div>{children}</div>}
-  </MUICard>
-);
+  </MUICard>;
 
 const styles = {
   wrapper: {
@@ -20,8 +19,8 @@ const styles = {
   },
 };
 
-Card.Footer = Footer;
-Card.Header = Header;
+Card.Footer = CardFooter;
+Card.Header = CardHeader;
 
 Card.defaultProps = {
   style: {},

@@ -7,34 +7,44 @@ import { Card } from '../../src';
 
 const stories = storiesOf('Card', module);
 
-stories.add('default', () => (
+stories.addDecorator(story => <div style={styles.wrapper}>{story()}</div>);
+
+stories.add('default', () =>
   <Card>
     {loremIpsum({ count: 3, units: 'paragraphs' })}
-  </Card>
-));
+  </Card>,
+);
 
-stories.add('with header', () => (
+stories.add('with header', () =>
   <Card>
     <Card.Header>{loremIpsum()}</Card.Header>
     {loremIpsum({ count: 3, units: 'paragraphs' })}
-  </Card>
-));
+  </Card>,
+);
 
-stories.add('with footer', () => (
+stories.add('with footer', () =>
   <Card>
     {loremIpsum({ count: 3, units: 'paragraphs' })}
     <Card.Footer>
       <FlatButton label="Ok" />
     </Card.Footer>
-  </Card>
-));
+  </Card>,
+);
 
-stories.add('with header and footer', () => (
+stories.add('with header and footer', () =>
   <Card>
     <Card.Header>{loremIpsum()}</Card.Header>
     {loremIpsum({ count: 3, units: 'paragraphs' })}
     <Card.Footer>
       <FlatButton label="Ok" />
     </Card.Footer>
-  </Card>
-));
+  </Card>,
+);
+
+const styles = {
+  wrapper: {
+    padding: 20,
+    height: 'auto',
+    boxSizing: 'border-box',
+  },
+};
