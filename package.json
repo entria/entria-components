@@ -77,7 +77,7 @@
     "demo:gh-pages": "gh-pages -d storybook-static/",
     "demo:publish": "npm run demo:build && npm run demo:gh-pages",
     "check": "npm run lint && npm run test",
-    "prerelease": "npm run check && npm run build",
+    "prerelease": "npm run check && npm run build && git add lib && git commit -m 'Update ./lib/'",
     "release:patch": "npm run prerelease && npm version patch && git push --follow-tags && npm publish --access public",
     "release:minor": "npm run prerelease && npm version minor && git push --follow-tags && npm publish --access public",
     "release:major": "npm run prerelease && npm version major && git push --follow-tags && npm publish --access public"
