@@ -52,6 +52,8 @@
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {
+    "formsy-material-ui": ">=0.6.0",
+    "formsy-react": ">=0.19.5",
     "material-ui": ">=0.18.3",
     "react": ">=0.14",
     "react-dom": ">=0.14",
