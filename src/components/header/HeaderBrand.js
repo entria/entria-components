@@ -28,6 +28,7 @@ const styles = {
   link: {
     height: '100%',
     textDecoration: 'none',
+    color: '#232323',
   },
   withImage: {
     width: '100%',
