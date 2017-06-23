@@ -8,6 +8,7 @@ import FormCheckbox from './FormCheckbox';
 import FormFieldSet from './FormFieldSet';
 import FormInput from './FormInput';
 import FormSubmit from './FormSubmit';
+import createFromArray from './createFromArray';
 
 const Form = ({ onSubmit, onValid, onInvalid, children }) =>
   <Formsy.Form onValid={onValid} onInvalid={onInvalid} onValidSubmit={onSubmit}>
@@ -20,6 +21,7 @@ Form.Checkbox = FormCheckbox;
 Form.FieldSet = FormFieldSet;
 Form.Input = FormInput;
 Form.Submit = FormSubmit;
+Form.createFromArray = createFromArray;
 
 Form.defaultProps = {
   onValid: () => null,
