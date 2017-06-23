@@ -13,15 +13,19 @@ type Action = {
 };
 
 const initialState: State = {
-  visible: true,
+  visible: localStorage.getItem('sidebarVisible') !== 'false',
 };
 
 export default function reducer(state: State = initialState, action: Action) {
   switch (action.type) {
     case TOGGLE: {
+      const visible = !state.visible;
+
+      localStorage.setItem('sidebarVisible', visible);
+
       return {
         ...state,
-        visible: !state.visible,
+        visible,
       };
     }
     default:
