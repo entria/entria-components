@@ -55,6 +55,44 @@ stories.add('within a card', () =>
   </Form>,
 );
 
+stories.add('with createFromArray', () =>
+  <Card>
+    {Form.createFromArray(
+      [
+        {
+          name: 'name',
+          placeholder: 'Name',
+          required: true,
+        },
+        {
+          type: 'email',
+          name: 'email',
+          placeholder: 'Email',
+          required: true,
+        },
+        {
+          type: 'password',
+          name: 'password',
+          placeholder: 'Password',
+          required: true,
+        },
+        {
+          name: 'active',
+          placeholder: 'Active',
+          required: false,
+          type: 'boolean',
+        },
+      ],
+      {
+        initialValues: {
+          name: 'initial value',
+        },
+        onSubmit: (values) => console.log(values),
+      }
+    )}
+  </Card>
+);
+
 const styles = {
   wrapper: {
     width: 480,
