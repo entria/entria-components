@@ -19,9 +19,9 @@ const styles = {
   container: {
     display: 'flex',
     alignItems: 'center',
+    paddingTop: 40,
     paddingLeft: 40,
     paddingRight: 40,
-    height: 100,
     boxSizing: 'border-box',
   },
   title: {
