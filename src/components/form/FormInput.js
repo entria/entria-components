@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormsyText } from 'formsy-material-ui/lib';
 
-const FormInput = ({ name, type, label, placeholder, required }) =>
+const FormInput = ({ name, type, label, placeholder, value, required }) =>
   <FormsyText
     name={name}
     type={type}
     hintText={label}
     floatingLabelText={placeholder}
+    value={value}
     validations={required ? 'isExisty' : null}
     validationError="Campo obrigatório"
     style={styles.field}
@@ -23,6 +24,7 @@ FormInput.defaultProps = {
   type: 'text',
   label: '',
   placeholder: '',
+  value: null,
   required: false,
 };
 
@@ -31,6 +33,7 @@ FormInput.propTypes = {
   type: PropTypes.string,
   label: PropTypes.string,
   placeholder: PropTypes.string,
+  value: PropTypes.string,
   required: PropTypes.bool,
 };
 
