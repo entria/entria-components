@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import get from 'lodash/get';
 
 import Form from './Form';
 
 const defaultOptions = {
-  onSubmit: values => {},
+  onSubmit: () => null,
   initialValues: {},
 };
 
