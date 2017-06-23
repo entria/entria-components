@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Formsy from 'formsy-react';
 
 import FormActions from './FormActions';
+import FormCancel from './FormCancel';
 import FormCheckbox from './FormCheckbox';
 import FormFieldSet from './FormFieldSet';
 import FormInput from './FormInput';
@@ -14,6 +15,7 @@ const Form = ({ onSubmit, onValid, onInvalid, children }) =>
   </Formsy.Form>;
 
 Form.Actions = FormActions;
+Form.Cancel = FormCancel;
 Form.Checkbox = FormCheckbox;
 Form.FieldSet = FormFieldSet;
 Form.Input = FormInput;
