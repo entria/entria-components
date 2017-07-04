@@ -4,10 +4,16 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import { ThemeProvider } from '../src';
+import { ThemeProvider, customize } from '../src';
 import store from './store';
 
 injectTapEventPlugin();
+
+customize({
+  palette: {
+    primary1Color: '#661f42',
+  },
+});
 
 const req = require.context('./stories', true, /\.story\.js$/);
 
