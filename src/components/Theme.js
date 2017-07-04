@@ -4,10 +4,6 @@ import { deepConcat } from '../utils/objects';
 
 const LOCAL_STORAGE_CONFIG = 'v1-customTheme';
 
-export function customize(config) {
-  localStorage.setItem(LOCAL_STORAGE_CONFIG, JSON.stringify(config));
-}
-
 const defaultConfig = {
   fontFamily: '"Montserrat", sans-serif',
   palette: {
@@ -30,6 +26,14 @@ const defaultConfig = {
     width: 300,
   },
 };
+
+export function createTheme(customConfig) {
+  localStorage.setItem(LOCAL_STORAGE_CONFIG, JSON.stringify(customConfig));
+
+  const config = deepConcat(defaultConfig, customConfig);
+
+  return getMuiTheme(config);
+}
 
 const customConfig = localStorage.getItem(LOCAL_STORAGE_CONFIG)
   ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_CONFIG))

@@ -4,30 +4,32 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import { ThemeProvider, customize } from '../src';
+import { ThemeProvider, createTheme } from '../src';
 import store from './store';
 
 injectTapEventPlugin();
 
-customize({
+const theme = createTheme({
   palette: {
-    primary1Color: '#661f42',
+    primary1Color: '#8b2756',
+    accent1Color: '#661f42',
+    accent2Color: '#3d192f',
   },
 });
-
-const req = require.context('./stories', true, /\.story\.js$/);
 
 addDecorator(story =>
   <div style={{ margin: -8 }}>
     <Provider store={store}>
       <MemoryRouter initialEntries={['/']}>
-        <ThemeProvider>
+        <ThemeProvider theme={theme}>
           {story()}
         </ThemeProvider>
       </MemoryRouter>
     </Provider>
   </div>,
 );
+
+const req = require.context('./stories', true, /\.story\.js$/);
 
 function loadStories() {
   req.keys().forEach(filename => req(filename));
