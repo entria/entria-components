@@ -10,7 +10,7 @@ export Icon from './components/utils/Icon';
 export Loading from './components/utils/Loading';
 export RoutedTabs from './components/utils/RoutedTabs';
 
-export Theme, { customize } from './components/Theme';
+export Theme, { createTheme } from './components/Theme';
 export ThemeProvider from './components/ThemeProvider';
 
 export reducers from './reducers';
