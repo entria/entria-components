@@ -5,7 +5,7 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 
 const RoutedTabs = ({ tabs, location, history }) => {
   let initialSelectedIndex = 0;
-  tabs.map((tab, tabIndex) => {
+  tabs.forEach((tab, tabIndex) => {
     if (tab.route === location.pathname) {
       initialSelectedIndex = tabIndex;
     }
@@ -13,13 +13,11 @@ const RoutedTabs = ({ tabs, location, history }) => {
 
   return (
     <Tabs initialSelectedIndex={initialSelectedIndex}>
-      {tabs.map((tab, tabIndex) => {
-        return (
-          <Tab key={tabIndex} label={tab.label} onActive={() => history.replace(tab.route)}>
-            {tabIndex === initialSelectedIndex ? tab.component : null}
-          </Tab>
-        );
-      })}
+      {tabs.map((tab, tabIndex) =>
+        <Tab key={tab.label} label={tab.label} onActive={() => history.replace(tab.route)}>
+          {tabIndex === initialSelectedIndex ? tab.component : null}
+        </Tab>,
+      )}
     </Tabs>
   );
 };
