@@ -1,5 +1,7 @@
 /* @flow */
 
+const LOCAL_STORAGE_SIDEBAR = 'v1-sidebarVisible';
+
 // Actions
 const TOGGLE: string = 'entria-components/Sidebar/TOGGLE';
 
@@ -13,7 +15,7 @@ type Action = {
 };
 
 const initialState: State = {
-  visible: localStorage.getItem('sidebarVisible') !== 'false',
+  visible: localStorage.getItem(LOCAL_STORAGE_SIDEBAR) !== 'false',
 };
 
 export default function reducer(state: State = initialState, action: Action) {
@@ -21,7 +23,7 @@ export default function reducer(state: State = initialState, action: Action) {
     case TOGGLE: {
       const visible = !state.visible;
 
-      localStorage.setItem('sidebarVisible', visible);
+      localStorage.setItem(LOCAL_STORAGE_SIDEBAR, visible);
 
       return {
         ...state,

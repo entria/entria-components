@@ -2,8 +2,10 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { white } from 'material-ui/styles/colors';
 import { deepConcat } from '../utils/objects';
 
+const LOCAL_STORAGE_CONFIG = 'v1-customTheme';
+
 export function customize(config) {
-  localStorage.setItem('customTheme', JSON.stringify(config));
+  localStorage.setItem(LOCAL_STORAGE_CONFIG, JSON.stringify(config));
 }
 
 const defaultConfig = {
@@ -29,8 +31,8 @@ const defaultConfig = {
   },
 };
 
-const customConfig = localStorage.getItem('customTheme')
-  ? JSON.parse(localStorage.getItem('customTheme'))
+const customConfig = localStorage.getItem(LOCAL_STORAGE_CONFIG)
+  ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_CONFIG))
   : {};
 
 const config = deepConcat(defaultConfig, customConfig);
