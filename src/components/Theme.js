@@ -1,7 +1,14 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { white } from 'material-ui/styles/colors';
+import { deepConcat } from '../utils/objects';
 
-const muiTheme = getMuiTheme({
+const LOCAL_STORAGE_CONFIG = 'v1-customTheme';
+
+export function customize(config) {
+  localStorage.setItem(LOCAL_STORAGE_CONFIG, JSON.stringify(config));
+}
+
+const defaultConfig = {
   fontFamily: '"Montserrat", sans-serif',
   palette: {
     primary1Color: '#2B8CE9',
@@ -22,6 +29,12 @@ const muiTheme = getMuiTheme({
     color: white,
     width: 300,
   },
-});
+};
 
-export default muiTheme;
+const customConfig = localStorage.getItem(LOCAL_STORAGE_CONFIG)
+  ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_CONFIG))
+  : {};
+
+const config = deepConcat(defaultConfig, customConfig);
+
+export default getMuiTheme(config);
