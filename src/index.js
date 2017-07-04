@@ -6,6 +6,7 @@ export Sidebar from './components/sidebar/Sidebar';
 
 export DocumentTitle from './components/utils/DocumentTitle';
 export Error from './components/utils/Error';
+export Icon from './components/utils/Icon';
 export Loading from './components/utils/Loading';
 
 export Theme from './components/Theme';
