@@ -1,11 +1,12 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { white } from 'material-ui/styles/colors';
+import { deepConcat } from '../utils/objects';
 
 export function customize(config) {
   localStorage.setItem('customTheme', JSON.stringify(config));
 }
 
-const config = {
+const defaultConfig = {
   fontFamily: '"Montserrat", sans-serif',
   palette: {
     primary1Color: '#2B8CE9',
@@ -31,15 +32,7 @@ const config = {
 const customConfig = localStorage.getItem('customTheme')
   ? JSON.parse(localStorage.getItem('customTheme'))
   : {};
-Object.keys(customConfig).forEach(key => {
-  if (typeof config[key] === 'object') {
-    config[key] = {
-      ...config[key],
-      ...customConfig[key],
-    };
-  } else {
-    config[key] = customConfig[key];
-  }
-});
+
+const config = deepConcat(defaultConfig, customConfig);
 
 export default getMuiTheme(config);
