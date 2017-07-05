@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Brand = ({ image, title, subtitle }) =>
-  <Link style={styles.link} to="/">
+const Brand = ({ image, title, subtitle, style }) =>
+  <Link style={{ ...styles.link, ...style }} to="/">
     {image
       ? <BrandWithImage image={image} title={title} />
       : <BrandWithoutImage title={title} subtitle={subtitle} />}
@@ -60,6 +61,14 @@ const styles = {
     fontSize: 12.5,
     textTransform: 'uppercase',
   },
+};
+
+Brand.defaultProps = {
+  style: {},
+};
+
+Brand.propTypes = {
+  style: PropTypes.object,
 };
 
 export default Brand;
