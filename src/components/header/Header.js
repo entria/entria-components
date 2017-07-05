@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 
-import Theme from '../Theme';
+import { getTheme } from '../Theme';
 import HeaderBrand from './HeaderBrand';
 
 const Header = ({ left, title, right, style }) =>
@@ -30,8 +30,8 @@ const styles = {
     boxShadow: 'rgba(0, 0, 0, 0.004) 0px 5px 10px, rgba(0, 0, 0, 0.1) 0px 8px 20px',
   },
   left: {
-    width: Theme.drawer.width,
-    height: Theme.appBar.height,
+    width: getTheme().drawer.width,
+    height: getTheme().appBar.height,
     margin: 0,
     padding: 20,
     boxSizing: 'border-box',
@@ -39,7 +39,7 @@ const styles = {
     alignItems: 'center',
   },
   title: {
-    height: Theme.appBar.height,
+    height: getTheme().appBar.height,
     margin: 0,
     padding: 20,
     boxSizing: 'border-box',
@@ -49,8 +49,8 @@ const styles = {
     lineHeight: 'initial',
   },
   right: {
-    width: Theme.drawer.width,
-    height: Theme.appBar.height,
+    width: getTheme().drawer.width,
+    height: getTheme().appBar.height,
     margin: 0,
     padding: 20,
     boxSizing: 'border-box',

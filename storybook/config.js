@@ -18,15 +18,13 @@ const theme = createTheme({
 });
 
 addDecorator(story =>
-  <div style={{ margin: -8 }}>
-    <Provider store={store}>
-      <MemoryRouter initialEntries={['/']}>
-        <ThemeProvider theme={theme}>
-          {story()}
-        </ThemeProvider>
-      </MemoryRouter>
-    </Provider>
-  </div>,
+  <Provider store={store}>
+    <MemoryRouter initialEntries={['/']}>
+      <ThemeProvider theme={theme}>
+        {story()}
+      </ThemeProvider>
+    </MemoryRouter>
+  </Provider>,
 );
 
 const req = require.context('./stories', true, /\.story\.js$/);

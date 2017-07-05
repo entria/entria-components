@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Theme from '../Theme';
+import { getTheme } from '../Theme';
 import ContentHeaderActions from './ContentHeaderActions';
 
 const ContentHeader = ({ title, actions }) =>
@@ -30,7 +30,7 @@ const styles = {
     fontSize: 28,
     fontWeight: 400,
     letterSpacing: '-0.015em',
-    color: Theme.palette.primary1Color,
+    color: getTheme().palette.primary1Color,
   },
   actions: {},
 };

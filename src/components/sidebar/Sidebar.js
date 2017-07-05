@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Drawer from 'material-ui/Drawer';
 
-import Theme from '../Theme';
+import { getTheme } from '../Theme';
 import SidebarHeader from './SidebarHeader';
 import SidebarItem from './SidebarItem';
 import SidebarMenu from './SidebarMenu';
@@ -32,7 +32,7 @@ Sidebar.Toggler = SidebarToggler;
 
 const styles = {
   wrapper: {
-    top: Theme.appBar.height,
+    top: getTheme().appBar.height,
   },
 };
 

@@ -1,3 +1,4 @@
+import { css } from 'glamor';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { white } from 'material-ui/styles/colors';
 import { deepConcat } from '../utils/objects';
@@ -32,13 +33,23 @@ export function createTheme(customConfig) {
 
   const config = deepConcat(defaultConfig, customConfig);
 
+  css.global('html, body, #root, [data-reactroot]', {
+    margin: 0,
+    padding: 0,
+    width: '100%',
+    height: '100%',
+    fontFamily: config.fontFamily,
+  });
+
   return getMuiTheme(config);
 }
 
-const customConfig = localStorage.getItem(LOCAL_STORAGE_CONFIG)
-  ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_CONFIG))
-  : {};
+export function getTheme() {
+  const customConfig = localStorage.getItem(LOCAL_STORAGE_CONFIG)
+    ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_CONFIG))
+    : {};
 
-const config = deepConcat(defaultConfig, customConfig);
+  const config = deepConcat(defaultConfig, customConfig);
 
-export default getMuiTheme(config);
+  return getMuiTheme(config);
+}
