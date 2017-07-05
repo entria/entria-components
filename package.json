@@ -36,6 +36,7 @@
     "formsy-material-ui": "^0.6.0",
     "formsy-react": "^0.19.5",
     "gh-pages": "^1.0.0",
+    "glamor": "^3.0.0-2",
     "lint-staged": "^4.0.0",
     "lodash": "^4.17.4",
     "lorem-ipsum": "^1.0.4",
@@ -54,6 +55,7 @@
   "peerDependencies": {
     "formsy-material-ui": ">=0.6.0",
     "formsy-react": ">=0.19.5",
+    "glamor": ">=3.0.0-2",
     "lodash": ">=4.17.4",
     "material-ui": ">=0.18.3",
     "prop-types": ">=15.5.10",
