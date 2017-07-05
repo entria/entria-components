@@ -1,15 +1,38 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { storiesOf } from '@kadira/storybook';
 import loremIpsum from 'lorem-ipsum';
 
+import IconButton from 'material-ui/IconButton';
 import FlatButton from 'material-ui/FlatButton';
-import { Header, Sidebar, Content } from '../../src';
+import { Header, Sidebar, Content, AnimatedIcons } from '../../src';
 
 const stories = storiesOf('Template', module);
 
+const CustomHeader = connect(
+  state => ({
+    sidebar: state.sidebar,
+  }),
+)(
+  ({ sidebar }) => (
+    <Header
+      left={
+        <IconButton>
+          <Sidebar.Toggler>
+            <AnimatedIcons.Menu opened={sidebar.visible} />
+          </Sidebar.Toggler>
+        </IconButton>
+      }
+      title={
+        <Header.Brand title="Entria" subtitle="Tech" />
+      }
+    />
+  ),
+);
+
 stories.add('default', () =>
   <div>
-    <Header left={<Header.Brand title="Entria" subtitle="Tech" />} />
+    <CustomHeader />
 
     <Sidebar>
       <Sidebar.Header>Entria</Sidebar.Header>
@@ -37,3 +60,11 @@ stories.add('default', () =>
     </Content>
   </div>,
 );
+
+const styles = {
+  header: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+  },
+};

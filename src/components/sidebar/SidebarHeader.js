@@ -1,12 +1,11 @@
 import React from 'react';
 
-import Theme from '../Theme';
+import { getTheme } from '../Theme';
 
-const SidebarHeader = ({ children }) => (
+const SidebarHeader = ({ children }) =>
   <div style={styles.wrapper}>
     {children}
-  </div>
-);
+  </div>;
 
 const styles = {
   wrapper: {
@@ -16,7 +15,7 @@ const styles = {
     width: '100%',
     height: 100,
     padding: 20,
-    backgroundColor: Theme.palette.primary1Color,
+    backgroundColor: getTheme().palette.primary1Color,
     color: 'white',
     boxSizing: 'border-box',
   },

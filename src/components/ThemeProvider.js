@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Snackbar from 'material-ui/Snackbar';
 
-import DefaultTheme from './Theme';
+import { createTheme } from './Theme';
 
 class ThemeProvider extends Component {
   static childContextTypes = {
@@ -47,7 +47,7 @@ class ThemeProvider extends Component {
     const { snackbar } = this.state;
     const { theme, children } = this.props;
 
-    const muiTheme = theme || DefaultTheme;
+    const muiTheme = theme || createTheme({});
 
     return (
       <MuiThemeProvider muiTheme={muiTheme}>

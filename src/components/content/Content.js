@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Theme from '../Theme';
+import { getTheme } from '../Theme';
 import ContentBody from './ContentBody';
 import ContentHeader from './ContentHeader';
 
@@ -28,8 +28,8 @@ Content.Header = ContentHeader;
 const styles = {
   wrapper: {
     minHeight: '100%',
-    paddingTop: Theme.appBar.height,
-    paddingLeft: Theme.drawer.width,
+    paddingTop: getTheme().appBar.height,
+    paddingLeft: getTheme().drawer.width,
     transitionProperty: 'padding',
     transitionDuration: '300ms',
     boxSizing: 'border-box',
