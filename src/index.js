@@ -1,3 +1,4 @@
+export AnimatedIcons from './components/animatedIcons';
 export Card from './components/card/Card';
 export Content from './components/content/Content';
 export Form from './components/form/Form';
