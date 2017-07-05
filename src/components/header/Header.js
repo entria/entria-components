@@ -12,7 +12,7 @@ const Header = ({ left, title, right, style }) =>
       iconStyleLeft={styles.left}
       title={title}
       titleStyle={styles.title}
-      iconElementRight={right}
+      iconElementRight={right || <div />}
       iconStyleRight={styles.right}
       showMenuIconButton={left !== null}
       style={{ ...styles.wrapper, ...style }}
