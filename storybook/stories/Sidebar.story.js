@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
 import FlatButton from 'material-ui/FlatButton';
-import { Sidebar, Content } from '../../src';
+import { Sidebar, Content, getTheme } from '../../src';
 
 const stories = storiesOf('Sidebar', module);
 
@@ -12,6 +12,16 @@ stories.add('default', () =>
       <Sidebar.Item link="#">Link 1</Sidebar.Item>
       <Sidebar.Item link="#">Link 2</Sidebar.Item>
       <Sidebar.Item link="#">Link 3</Sidebar.Item>
+    </Sidebar.Menu>
+  </Sidebar>,
+);
+
+stories.add('styled', () =>
+  <Sidebar style={{ ...styles.sidebar, ...styles.styledSidebar }}>
+    <Sidebar.Menu>
+      <Sidebar.Item link="#" style={styles.styledItem}>Link 1</Sidebar.Item>
+      <Sidebar.Item link="#" style={styles.styledItem}>Link 2</Sidebar.Item>
+      <Sidebar.Item link="#" style={styles.styledItem}>Link 3</Sidebar.Item>
     </Sidebar.Menu>
   </Sidebar>,
 );
@@ -73,5 +83,12 @@ const styles = {
   },
   sidebar: {
     top: 0,
+  },
+  styledSidebar: {
+    boxShadow: 0,
+    background: getTheme().palette.primary1Color,
+  },
+  styledItem: {
+    color: '#FFF',
   },
 };
