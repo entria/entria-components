@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'glamor';
 
-import { transition, transform } from '../../utils/styles';
-
 const MenuIcon = ({ opened, size, spaces, color }) => {
   const linesHeight = size * 3;
   const spacesHeight = size * spaces * 3;
@@ -11,13 +9,11 @@ const MenuIcon = ({ opened, size, spaces, color }) => {
 
   const styles = {
     wrapper: css({
-      ...transition('.5s ease-in-out'),
-      ...transform('rotate(0deg)'),
       height,
       position: 'relative',
+      transform: 'rotate(0deg)',
+      transition: '.5s ease-in-out',
       '> span': {
-        ...transition('.25s ease-in-out'),
-        ...transform('rotate(0deg)'),
         display: 'block',
         position: 'absolute',
         left: 0,
@@ -26,6 +22,8 @@ const MenuIcon = ({ opened, size, spaces, color }) => {
         borderRadius: size,
         background: color,
         opacity: 1,
+        transform: 'rotate(0deg)',
+        transition: '.25s ease-in-out',
       },
       '> span:nth-child(1)': {
         top: 0,
@@ -45,10 +43,10 @@ const MenuIcon = ({ opened, size, spaces, color }) => {
         left: '50%',
       },
       '> span:nth-child(2)': {
-        ...transform('rotate(45deg)'),
+        transform: 'rotate(45deg)',
       },
       '> span:nth-child(3)': {
-        ...transform('rotate(-45deg)'),
+        transform: 'rotate(-45deg)',
       },
     }),
   };
