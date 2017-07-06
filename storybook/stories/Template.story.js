@@ -37,9 +37,9 @@ stories.add('default', () =>
     <Sidebar>
       <Sidebar.Header>Entria</Sidebar.Header>
       <Sidebar.Menu>
-        <Sidebar.Item link="#">Link 1</Sidebar.Item>
-        <Sidebar.Item link="#">Link 2</Sidebar.Item>
-        <Sidebar.Item link="#">Link 3</Sidebar.Item>
+        <Sidebar.Item link="#" style={styles.sidebarItem}>Link 1</Sidebar.Item>
+        <Sidebar.Item link="#" style={styles.sidebarItem}>Link 2</Sidebar.Item>
+        <Sidebar.Item link="#" style={styles.sidebarItem}>Link 3</Sidebar.Item>
       </Sidebar.Menu>
     </Sidebar>
 
@@ -66,5 +66,8 @@ const styles = {
     width: '100%',
     display: 'flex',
     alignItems: 'center',
+  },
+  sidebarItem: {
+    color: '#545454',
   },
 };
