@@ -5,18 +5,17 @@ import AppBar from 'material-ui/AppBar';
 import { getTheme } from '../Theme';
 import HeaderBrand from './HeaderBrand';
 
-const Header = ({ left, title, right, style }) =>
+const Header = ({ left, title, right, style, leftStyle, titleStyle, rightStyle }) =>
   <div>
     <AppBar
       iconElementLeft={left}
-      iconStyleLeft={styles.left}
+      iconStyleLeft={{ ...styles.left, ...leftStyle }}
       title={title}
-      titleStyle={styles.title}
-      iconElementRight={right || <div />}
-      iconStyleRight={styles.right}
+      titleStyle={{ ...styles.title, ...titleStyle }}
+      iconElementRight={right}
+      iconStyleRight={{ ...styles.right, ...rightStyle }}
       showMenuIconButton={left !== null}
       style={{ ...styles.wrapper, ...style }}
-      zDepth={2}
     />
   </div>;
 
@@ -28,6 +27,7 @@ const styles = {
     top: 0,
     zIndex: 1400,
     boxShadow: 'rgba(0, 0, 0, 0.004) 0px 5px 10px, rgba(0, 0, 0, 0.1) 0px 8px 20px',
+    overflow: 'hidden',
   },
   left: {
     width: getTheme().drawer.width,
@@ -62,6 +62,9 @@ const styles = {
 
 Header.defaultProps = {
   style: {},
+  leftStyle: {},
+  titleStyle: {},
+  rightStyle: {},
   left: null,
   title: null,
   right: null,
@@ -69,6 +72,9 @@ Header.defaultProps = {
 
 Header.propTypes = {
   style: PropTypes.object,
+  leftStyle: PropTypes.object,
+  titleStyle: PropTypes.object,
+  rightStyle: PropTypes.object,
   left: PropTypes.node,
   title: PropTypes.node,
   right: PropTypes.node,
