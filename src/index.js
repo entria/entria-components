@@ -8,6 +8,7 @@ export Sidebar from './components/sidebar/Sidebar';
 export DocumentTitle from './components/utils/DocumentTitle';
 export Error from './components/utils/Error';
 export Icon from './components/utils/Icon';
+export InfiniteScroll from './components/utils/InfiniteScroll';
 export Loading from './components/utils/Loading';
 export RoutedTabs from './components/utils/RoutedTabs';
 
