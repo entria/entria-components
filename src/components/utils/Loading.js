@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CircularProgress } from 'material-ui';
 
-const Loading = ({ visible, background, size, thickness }) => {
+const Loading = ({ visible, background, zIndex, size, thickness }) => {
   const styles = {
     wrapper: {
       position: 'absolute',
@@ -10,7 +10,7 @@ const Loading = ({ visible, background, size, thickness }) => {
       right: 0,
       bottom: 0,
       left: 0,
-      zIndex: visible ? 9999 : -1,
+      zIndex: visible ? zIndex : -1,
       opacity: visible ? 1 : 0,
       transition: 'all 0.2s',
       background,
@@ -32,11 +32,13 @@ const Loading = ({ visible, background, size, thickness }) => {
 Loading.defaultProps = {
   visible: true,
   background: '#FFFFFF',
+  zIndex: 9999,
 };
 
 Loading.propTypes = {
   visible: PropTypes.bool,
   background: PropTypes.string,
+  zIndex: PropTypes.number,
 };
 
 export default Loading;
