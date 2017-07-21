@@ -4,12 +4,22 @@ import { NavLink } from 'react-router-dom';
 
 import { ListItem } from 'material-ui/List';
 
-const SidebarItem = ({ link, style, activeStyle, exact, children }) =>
+import { connect } from 'react-redux';
+import { toggleSidebar } from '../../ducks/Sidebar';
+
+import { isLarge } from '../Responsive';
+
+const SidebarItem = ({ link, style, activeStyle, exact, sidebar, actions, children }) =>
   <NavLink
     to={link}
     style={{ ...styles.link, ...style }}
     activeStyle={{ ...styles.activeLink, ...activeStyle }}
     exact={exact}
+    onClick={() => {
+      if (!isLarge() && sidebar.visible) {
+        actions.toggleSidebar();
+      }
+    }}
   >
     <ListItem style={styles.listItem}>
       {children}
@@ -42,4 +52,14 @@ SidebarItem.propTypes = {
   exact: PropTypes.bool,
 };
 
-export default SidebarItem;
+const mapStateToProps = state => ({
+  sidebar: state.sidebar,
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: {
+    toggleSidebar: () => dispatch(toggleSidebar()),
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SidebarItem);

@@ -12,6 +12,7 @@ export InfiniteScroll from './components/utils/InfiniteScroll';
 export Loading from './components/utils/Loading';
 export RoutedTabs from './components/utils/RoutedTabs';
 
+export * as Responsive from './components/Responsive';
 export { createTheme, getTheme } from './components/Theme';
 export ThemeProvider from './components/ThemeProvider';
 

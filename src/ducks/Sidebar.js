@@ -1,4 +1,5 @@
 /* @flow */
+import { isLarge } from '../utils/responsive';
 
 const LOCAL_STORAGE_SIDEBAR = 'v1-sidebarVisible';
 
@@ -15,7 +16,7 @@ type Action = {
 };
 
 const initialState: State = {
-  visible: localStorage.getItem(LOCAL_STORAGE_SIDEBAR) !== 'false',
+  visible: isLarge() ? localStorage.getItem(LOCAL_STORAGE_SIDEBAR) !== 'false' : false,
 };
 
 export default function reducer(state: State = initialState, action: Action) {
