@@ -1,5 +1,5 @@
 /* @flow */
-import { isLarge } from '../utils/responsive';
+import { isLarge } from '../components/Responsive';
 
 const LOCAL_STORAGE_SIDEBAR = 'v1-sidebarVisible';
 
