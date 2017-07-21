@@ -17,7 +17,9 @@ const Content = ({ sidebar, style, children }) => {
 
   return (
     <div style={stylesWrapper}>
-      {children}
+      <div style={styles.content}>
+        {children}
+      </div>
     </div>
   );
 };
@@ -27,12 +29,21 @@ Content.Header = ContentHeader;
 
 const styles = {
   wrapper: {
+    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'column',
     minHeight: '100%',
     paddingTop: getTheme().appBar.height,
     paddingLeft: getTheme().drawer.width,
     transitionProperty: 'padding',
     transitionDuration: '300ms',
+  },
+  content: {
+    position: 'relative',
     boxSizing: 'border-box',
+    width: '100%',
+    minHeight: '100%',
+    flexGrow: 1,
   },
 };
 
