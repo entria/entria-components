@@ -26,6 +26,12 @@ const defaultConfig = {
     color: white,
     width: 300,
   },
+
+  // ENTRIA Custom
+  responsive: {
+    small: 480,
+    medium: 768,
+  },
 };
 
 export function createTheme(customConfig) {

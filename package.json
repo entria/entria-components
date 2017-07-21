@@ -49,7 +49,8 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
-    "redux": "^3.7.0"
+    "redux": "^3.7.0",
+    "styled-components": "^2.1.1"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -63,7 +64,8 @@
     "react-dom": ">=0.14",
     "react-redux": ">=5.0.5",
     "react-router-dom": ">=4.1.1",
-    "redux": ">=3.7.0"
+    "redux": ">=3.7.0",
+    "styled-components": ">=2.1.1"
   },
   "lint-staged": {
     "src/**/*.js": [

@@ -1,43 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import { getTheme } from '../Theme';
+import { VIEWPORT } from '../Responsive';
 import ContentBody from './ContentBody';
 import ContentHeader from './ContentHeader';
 
-const Content = ({ sidebar, style, children }) => {
-  const stylesWrapper = {
-    ...styles.wrapper,
-    ...style,
-  };
-  if (!sidebar.visible) {
-    stylesWrapper.paddingLeft = 0;
-  }
+const Wrapper = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-top: ${() => `${getTheme().appBar.height}px`};
+  padding-left: 0px;
+  transition-property: padding;
+  transition-duration: 300ms;
 
-  return (
-    <div style={stylesWrapper}>
-      <div style={styles.content}>
-        {children}
-      </div>
+  @media(min-width: ${VIEWPORT.MEDIUM}px) {
+    padding-left: ${props => (props.sidebar.visible ? `${getTheme().drawer.width}px` : 0)};
+  }
+`;
+
+const Content = ({ sidebar, style, children }) =>
+  <Wrapper sidebar={sidebar} style={style}>
+    <div style={styles.content}>
+      {children}
     </div>
-  );
-};
+  </Wrapper>;
 
 Content.Body = ContentBody;
 Content.Header = ContentHeader;
 
 const styles = {
-  wrapper: {
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100%',
-    paddingTop: getTheme().appBar.height,
-    paddingLeft: getTheme().drawer.width,
-    transitionProperty: 'padding',
-    transitionDuration: '300ms',
-  },
   content: {
     position: 'relative',
     boxSizing: 'border-box',

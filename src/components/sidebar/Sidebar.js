@@ -1,17 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import styled from 'styled-components';
 import Drawer from 'material-ui/Drawer';
 
+import { connect } from 'react-redux';
+
 import { getTheme } from '../Theme';
+import { VIEWPORT, isLarge } from '../Responsive';
 import SidebarHeader from './SidebarHeader';
 import SidebarItem from './SidebarItem';
 import SidebarMenu from './SidebarMenu';
 import SidebarToggler from './SidebarToggler';
 
+const Overlay = styled.div`
+  transition: all 200ms;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, .1);
+  opacity: 0;
+  z-index: -1;
+
+  @media(max-width: ${VIEWPORT.MEDIUM}px) {
+    opacity: ${props => (!isLarge() && props.visible ? 1 : 0)};
+    z-index: ${props => (!isLarge() && props.visible ? 1200 : -1)};
+  }
+`;
+
 const Sidebar = ({ visible, style, children }) => {
   const containerStyle = {
-    ...styles.wrapper,
+    ...styles.container,
     ...style,
   };
 
@@ -19,9 +39,13 @@ const Sidebar = ({ visible, style, children }) => {
   containerStyle.height = `calc(100% - ${top})`;
 
   return (
-    <Drawer docked={visible} containerStyle={containerStyle}>
-      {children}
-    </Drawer>
+    <div>
+      <Drawer docked={visible} containerStyle={containerStyle}>
+        {children}
+      </Drawer>
+
+      <Overlay visible={visible} />
+    </div>
   );
 };
 
@@ -31,7 +55,7 @@ Sidebar.Menu = SidebarMenu;
 Sidebar.Toggler = SidebarToggler;
 
 const styles = {
-  wrapper: {
+  container: {
     top: getTheme().appBar.height,
   },
 };
