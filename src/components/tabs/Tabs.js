@@ -6,6 +6,10 @@ import { VIEWPORT } from '../Responsive';
 
 const Wrapper = styled.div`
   > div {
+    > div:nth-child(2) > div {
+      transition: all 1s cubic-bezier(0.23, 1, 0.32, 1) 0ms !important;
+    }
+
     @media(max-width: ${VIEWPORT.MEDIUM}px) {
       > div:nth-child(1) {
         flex-direction: column;
