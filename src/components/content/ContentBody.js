@@ -1,23 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const TemplateContent = ({ style, children }) =>
-  <div style={{ ...styles.wrapper, ...style }}>
+import { VIEWPORT } from '../Responsive';
+
+const Wrapper = styled.div`
+  padding: 20px;
+
+  @media(min-width: ${VIEWPORT.MEDIUM}px) {
+    padding: 40px;
+  }
+`;
+
+const ContentBody = ({ style, children }) =>
+  <Wrapper style={style}>
     {children}
-  </div>;
+  </Wrapper>;
 
-const styles = {
-  wrapper: {
-    padding: 40,
-  },
-};
-
-TemplateContent.defaultProps = {
+ContentBody.defaultProps = {
   style: {},
 };
 
-TemplateContent.propTypes = {
+ContentBody.propTypes = {
   style: PropTypes.object,
 };
 
-export default TemplateContent;
+export default ContentBody;
