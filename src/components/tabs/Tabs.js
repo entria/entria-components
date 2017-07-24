@@ -28,12 +28,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const CustomTabs = props => {
-  return (
-    <Wrapper selectedIndex={props.initialSelectedIndex} tabsCount={props.children.length}>
-      <Tabs {...props} />
-    </Wrapper>
-  );
-};
+const CustomTabs = props =>
+  <Wrapper selectedIndex={props.initialSelectedIndex} tabsCount={props.children.length}>
+    <Tabs {...props} />
+  </Wrapper>;
 
 export default CustomTabs;
