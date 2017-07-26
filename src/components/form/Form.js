@@ -8,6 +8,7 @@ import FormCheckbox from './FormCheckbox';
 import FormFieldSet from './FormFieldSet';
 import FormInput from './FormInput';
 import FormSubmit from './FormSubmit';
+import FormValidation from './FormValidation';
 import createFromArray from './createFromArray';
 
 const Form = ({ onSubmit, onValid, onInvalid, children }) =>
@@ -21,6 +22,7 @@ Form.Checkbox = FormCheckbox;
 Form.FieldSet = FormFieldSet;
 Form.Input = FormInput;
 Form.Submit = FormSubmit;
+Form.Validation = FormValidation;
 Form.createFromArray = createFromArray;
 
 Form.defaultProps = {
