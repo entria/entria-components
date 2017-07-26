@@ -75,6 +75,7 @@
   },
   "pre-commit": "lint:staged",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "babel src -d lib",
     "lint": "eslint --ext js src",
     "lint:staged": "lint-staged",
