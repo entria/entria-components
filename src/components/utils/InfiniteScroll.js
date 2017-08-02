@@ -28,7 +28,7 @@ class InfiniteScroll extends Component {
 
     scrollTimeout = setTimeout(() => {
       const visibleArea = window.scrollY + window.innerHeight;
-      const toReach = window.outerHeight - this.props.offset;
+      const toReach = document.body.scrollHeight - this.props.offset;
 
       if (visibleArea >= toReach) {
         this.props.onScroll();
