@@ -1,7 +1,7 @@
+import { Objects } from '@entria/utils';
 import { css } from 'glamor';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { white } from 'material-ui/styles/colors';
-import { deepConcat } from '../utils/objects';
 
 const LOCAL_STORAGE_CONFIG = 'v1-customTheme';
 
@@ -37,7 +37,7 @@ const defaultConfig = {
 export function createTheme(customConfig) {
   localStorage.setItem(LOCAL_STORAGE_CONFIG, JSON.stringify(customConfig));
 
-  const config = deepConcat(defaultConfig, customConfig);
+  const config = Objects.concat(defaultConfig, customConfig);
 
   css.global('html, body, #root, [data-reactroot]', {
     margin: 0,
@@ -55,7 +55,7 @@ export function getTheme() {
     ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_CONFIG))
     : {};
 
-  const config = deepConcat(defaultConfig, customConfig);
+  const config = Objects.concat(defaultConfig, customConfig);
 
   return getMuiTheme(config);
 }

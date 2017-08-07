@@ -18,6 +18,7 @@
   "module": "src/index.js",
   "jsnext:main": "src/index.js",
   "devDependencies": {
+    "@entria/utils": "^0.0.1",
     "@kadira/storybook": "^2.35.3",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
@@ -54,6 +55,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
+    "@entria/utils": ">=0.0.1",
     "formsy-material-ui": ">=0.6.0",
     "formsy-react": ">=0.19.5",
     "glamor": ">=3.0.0-2",
