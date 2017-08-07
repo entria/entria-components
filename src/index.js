@@ -9,10 +9,8 @@ export RoutedTabs from './components/tabs/RoutedTabs';
 export Tab from './components/tabs/Tab';
 export Tabs from './components/tabs/Tabs';
 
-export DocumentTitle from './components/utils/DocumentTitle';
 export Error from './components/utils/Error';
 export Icon from './components/utils/Icon';
-export InfiniteScroll from './components/utils/InfiniteScroll';
 export Loading from './components/utils/Loading';
 
 export * as Responsive from './components/Responsive';
