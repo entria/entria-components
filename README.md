@@ -1,5 +1,7 @@
 # Entria Components
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/entria/entria-components.svg)](https://greenkeeper.io/)
+
 ## Install
 
 ```
