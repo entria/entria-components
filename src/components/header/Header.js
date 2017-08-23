@@ -9,19 +9,19 @@ const Header = ({ left, title, right, style, leftStyle, titleStyle, rightStyle }
   <div>
     <AppBar
       iconElementLeft={left}
-      iconStyleLeft={{ ...styles.left, ...leftStyle }}
+      iconStyleLeft={{ ...styles().left, ...leftStyle }}
       title={title}
-      titleStyle={{ ...styles.title, ...titleStyle }}
+      titleStyle={{ ...styles().title, ...titleStyle }}
       iconElementRight={right}
-      iconStyleRight={{ ...styles.right, ...rightStyle }}
+      iconStyleRight={{ ...styles().right, ...rightStyle }}
       showMenuIconButton={left !== null}
-      style={{ ...styles.wrapper, ...style }}
+      style={{ ...styles().wrapper, ...style }}
     />
   </div>;
 
 Header.Brand = HeaderBrand;
 
-const styles = {
+const styles = () => ({
   wrapper: {
     position: 'fixed',
     top: 0,
@@ -58,7 +58,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
-};
+});
 
 Header.defaultProps = {
   style: {},

@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CardHeader = ({ style, children }) =>
-  <div style={{ ...styles.wrapper, ...style }}>
+  <div style={{ ...styles().wrapper, ...style }}>
     {children}
   </div>;
 
-const styles = {
+const styles = () => ({
   wrapper: {
     padding: '15px 40px',
     marginTop: -20,
@@ -15,7 +15,7 @@ const styles = {
     marginBottom: 20,
     borderBottom: '1px solid #e5e5e5',
   },
-};
+});
 
 CardHeader.defaultProps = {
   style: {},

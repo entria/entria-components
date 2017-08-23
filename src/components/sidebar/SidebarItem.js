@@ -12,8 +12,8 @@ import { isLarge } from '../Responsive';
 const SidebarItem = ({ link, style, activeStyle, exact, sidebar, actions, children }) =>
   <NavLink
     to={link}
-    style={{ ...styles.link, ...style }}
-    activeStyle={{ ...styles.activeLink, ...activeStyle }}
+    style={{ ...styles().link, ...style }}
+    activeStyle={{ ...styles().activeLink, ...activeStyle }}
     exact={exact}
     onClick={() => {
       if (!isLarge() && sidebar.visible) {
@@ -21,12 +21,12 @@ const SidebarItem = ({ link, style, activeStyle, exact, sidebar, actions, childr
       }
     }}
   >
-    <ListItem style={styles.listItem}>
+    <ListItem style={styles().listItem}>
       {children}
     </ListItem>
   </NavLink>;
 
-const styles = {
+const styles = () => ({
   link: {
     transition: 'all 100ms linear',
     textDecoration: 'none',
@@ -37,7 +37,7 @@ const styles = {
   listItem: {
     color: 'inherit',
   },
-};
+});
 
 SidebarItem.defaultProps = {
   style: {},

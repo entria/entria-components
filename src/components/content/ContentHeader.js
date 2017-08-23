@@ -5,17 +5,17 @@ import { getTheme } from '../Theme';
 import ContentHeaderActions from './ContentHeaderActions';
 
 const ContentHeader = ({ title, actions }) =>
-  <div style={styles.container}>
-    <h1 style={styles.title}>
+  <div style={styles().container}>
+    <h1 style={styles().title}>
       {title}
     </h1>
 
-    {actions && <div style={styles.actions}>{actions}</div>}
+    {actions && <div style={styles().actions}>{actions}</div>}
   </div>;
 
 ContentHeader.Actions = ContentHeaderActions;
 
-const styles = {
+const styles = () => ({
   container: {
     display: 'flex',
     alignItems: 'center',
@@ -33,7 +33,7 @@ const styles = {
     color: getTheme().palette.primary1Color,
   },
   actions: {},
-};
+});
 
 ContentHeader.defaultProps = {
   title: null,

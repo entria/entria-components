@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 
 const Content = ({ sidebar, style, children }) =>
   <Wrapper sidebar={sidebar} style={style}>
-    <div style={styles.content}>
+    <div style={styles().content}>
       {children}
     </div>
   </Wrapper>;
@@ -33,7 +33,7 @@ const Content = ({ sidebar, style, children }) =>
 Content.Body = ContentBody;
 Content.Header = ContentHeader;
 
-const styles = {
+const styles = () => ({
   content: {
     position: 'relative',
     boxSizing: 'border-box',
@@ -41,7 +41,7 @@ const styles = {
     minHeight: '100%',
     flexGrow: 1,
   },
-};
+});
 
 Content.defaultProps = {
   style: {},
