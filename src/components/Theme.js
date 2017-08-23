@@ -3,7 +3,7 @@ import { css } from 'glamor';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { white } from 'material-ui/styles/colors';
 
-const LOCAL_STORAGE_CONFIG = 'v1-customTheme';
+const LOCAL_STORAGE_CONFIG = 'entria-components-v1-theme';
 
 const defaultConfig = {
   fontFamily: '"Montserrat", sans-serif',
