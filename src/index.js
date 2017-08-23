@@ -1,7 +1,6 @@
 export AnimatedIcons from './components/animatedIcons';
 export Card from './components/card/Card';
 export Content from './components/content/Content';
-export Form from './components/form/Form';
 export Header from './components/header/Header';
 export Sidebar from './components/sidebar/Sidebar';
 
