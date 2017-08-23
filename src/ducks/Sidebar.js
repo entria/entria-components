@@ -1,7 +1,7 @@
 /* @flow */
 import { isLarge } from '../components/Responsive';
 
-const LOCAL_STORAGE_SIDEBAR = 'v1-sidebarVisible';
+const LOCAL_STORAGE_SIDEBAR = 'entria-components-v1-sidebarVisible';
 
 // Actions
 const TOGGLE: string = 'entria-components/Sidebar/TOGGLE';
