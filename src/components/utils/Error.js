@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Error = ({ error }) =>
-  <div style={styles.wrapper}>
+  <div style={styles().wrapper}>
     <h1>Error</h1>
     <p>{error.message}</p>
   </div>;
 
-const styles = {
+const styles = () => ({
   wrapper: {
     display: 'flex',
     flexDirection: 'column',
@@ -15,6 +15,6 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
   },
-};
+});
 
 export default Error;

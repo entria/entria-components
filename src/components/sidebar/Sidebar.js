@@ -31,7 +31,7 @@ const Overlay = styled.div`
 
 const Sidebar = ({ visible, style, children }) => {
   const containerStyle = {
-    ...styles.container,
+    ...styles().container,
     ...style,
   };
 
@@ -54,11 +54,11 @@ Sidebar.Item = SidebarItem;
 Sidebar.Menu = SidebarMenu;
 Sidebar.Toggler = SidebarToggler;
 
-const styles = {
+const styles = () => ({
   container: {
     top: getTheme().appBar.height,
   },
-};
+});
 
 Sidebar.defaultProps = {
   style: {},

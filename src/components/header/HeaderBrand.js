@@ -3,29 +3,29 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Brand = ({ image, title, subtitle, style }) =>
-  <Link style={{ ...styles.link, ...style }} to="/">
+  <Link style={{ ...styles().link, ...style }} to="/">
     {image
       ? <BrandWithImage image={image} title={title} />
       : <BrandWithoutImage title={title} subtitle={subtitle} />}
   </Link>;
 
 const BrandWithImage = ({ image, title }) =>
-  <div style={styles.withImage}>
-    <img src={image} title={title} alt={title} style={styles.image} />
+  <div style={styles().withImage}>
+    <img src={image} title={title} alt={title} style={styles().image} />
   </div>;
 
 const BrandWithoutImage = ({ title, subtitle }) =>
-  <div style={styles.withoutImage}>
-    <h3 style={styles.title}>
+  <div style={styles().withoutImage}>
+    <h3 style={styles().title}>
       {title}
     </h3>
 
-    <small style={styles.subtitle}>
+    <small style={styles().subtitle}>
       {subtitle}
     </small>
   </div>;
 
-const styles = {
+const styles = () => ({
   link: {
     height: '100%',
     textDecoration: 'none',
@@ -61,7 +61,7 @@ const styles = {
     fontSize: 12.5,
     textTransform: 'uppercase',
   },
-};
+});
 
 Brand.defaultProps = {
   style: {},

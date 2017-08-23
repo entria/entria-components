@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { CardActions } from 'material-ui/Card';
 
 const CardFooter = ({ style, children }) =>
-  <CardActions style={{ ...styles.wrapper, ...style }}>
+  <CardActions style={{ ...styles().wrapper, ...style }}>
     {React.isValidElement(children) ? children : <div>{children}</div>}
   </CardActions>;
 
-const styles = {
+const styles = () => ({
   wrapper: {
     display: 'flex',
     justifyContent: 'flex-end',
@@ -18,7 +18,7 @@ const styles = {
     marginTop: 20,
     borderTop: '1px solid #e5e5e5',
   },
-};
+});
 
 CardFooter.defaultProps = {
   style: {},

@@ -3,11 +3,11 @@ import React from 'react';
 import { getTheme } from '../Theme';
 
 const SidebarHeader = ({ children }) =>
-  <div style={styles.wrapper}>
+  <div style={styles().wrapper}>
     {children}
   </div>;
 
-const styles = {
+const styles = () => ({
   wrapper: {
     display: 'flex',
     alignItems: 'center',
@@ -19,6 +19,6 @@ const styles = {
     color: 'white',
     boxSizing: 'border-box',
   },
-};
+});
 
 export default SidebarHeader;
