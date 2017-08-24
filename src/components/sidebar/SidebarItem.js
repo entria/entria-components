@@ -56,7 +56,7 @@ SidebarItem.defaultProps = {
   style: {},
   activeStyle: {},
   exact: true,
-  external: true,
+  external: false,
 };
 
 SidebarItem.propTypes = {
