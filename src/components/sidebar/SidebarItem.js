@@ -12,7 +12,7 @@ import { isLarge } from '../Responsive';
 const SidebarItem = ({ link, style, activeStyle, exact, external, sidebar, actions, children }) => {
   if (external) {
     return (
-      <a href={link} style={{ ...styles().link, ...style }}>
+      <a href={link} style={{ ...styles().link, ...style }} target="_blank">
         <ListItem style={styles().listItem}>
           {children}
         </ListItem>
