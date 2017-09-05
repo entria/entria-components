@@ -9,10 +9,20 @@ import { toggleSidebar } from '../../ducks/Sidebar';
 
 import { isLarge } from '../Responsive';
 
-const SidebarItem = ({ link, style, activeStyle, exact, external, sidebar, actions, children }) => {
+const SidebarItem = ({
+  link,
+  style,
+  activeStyle,
+  exact,
+  external,
+  target,
+  sidebar,
+  actions,
+  children,
+}) => {
   if (external) {
     return (
-      <a href={link} style={{ ...styles().link, ...style }} target="_blank">
+      <a href={link} style={{ ...styles().link, ...style }} target={target}>
         <ListItem style={styles().listItem}>
           {children}
         </ListItem>
@@ -57,6 +67,7 @@ SidebarItem.defaultProps = {
   activeStyle: {},
   exact: true,
   external: false,
+  target: '_blank',
 };
 
 SidebarItem.propTypes = {
@@ -65,6 +76,7 @@ SidebarItem.propTypes = {
   activeStyle: PropTypes.object,
   exact: PropTypes.bool,
   external: PropTypes.bool,
+  target: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
