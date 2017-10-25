@@ -5,6 +5,7 @@ export Header from './components/header/Header';
 export Sidebar from './components/sidebar/Sidebar';
 
 export RoutedTabs from './components/tabs/RoutedTabs';
+export ScrollableRoutedTabs from './components/tabs/ScrollableRoutedTabs';
 export Tab from './components/tabs/Tab';
 export Tabs from './components/tabs/Tabs';
 
